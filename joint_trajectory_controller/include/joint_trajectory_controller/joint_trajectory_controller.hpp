@@ -55,9 +55,7 @@ namespace joint_trajectory_controller
 
 struct TimeData
 {
-  TimeData() : time(0.0), period(rclcpp::Duration::from_nanoseconds(0.0)), uptime(0.0)
-  {
-  }
+  TimeData() : time(0.0), period(rclcpp::Duration::from_nanoseconds(0.0)), uptime(0.0) {}
   rclcpp::Time time;
   rclcpp::Duration period;
   rclcpp::Time uptime;
