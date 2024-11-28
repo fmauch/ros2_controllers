@@ -29,8 +29,8 @@ TEST(TestLoadDiffDriveController, load_controller)
 
   controller_manager::ControllerManager cm(
     executor, ros2_control_test_assets::diffbot_urdf, true, "test_controller_manager");
-  const std::string test_file_path =
-    std::string(TEST_FILES_DIRECTORY) + "/config/test_diff_drive_controller.yaml";
+  const std::vector<std::string> test_file_path = {
+    std::string(TEST_FILES_DIRECTORY) + "/config/test_diff_drive_controller.yaml"};
 
   cm.set_parameter({"test_diff_drive_controller.params_file", test_file_path});
   cm.set_parameter(

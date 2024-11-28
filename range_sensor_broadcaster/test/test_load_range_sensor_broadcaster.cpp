@@ -33,8 +33,8 @@ TEST(TestLoadRangeSensorBroadcaster, load_controller)
 
   controller_manager::ControllerManager cm(
     executor, ros2_control_test_assets::minimal_robot_urdf, true, "test_controller_manager");
-  const std::string test_file_path =
-    std::string(TEST_FILES_DIRECTORY) + "/range_sensor_broadcaster_params.yaml";
+  const std::vector<std::string> test_file_path = {
+    std::string(TEST_FILES_DIRECTORY) + "/range_sensor_broadcaster_params.yaml"};
 
   cm.set_parameter({"test_range_sensor_broadcaster.params_file", test_file_path});
   cm.set_parameter(

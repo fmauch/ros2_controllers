@@ -29,8 +29,8 @@ TEST(TestLoadPoseBroadcaster, load_controller)
   controller_manager::ControllerManager cm{
     executor, ros2_control_test_assets::minimal_robot_urdf, true, "test_controller_manager"};
 
-  const std::string test_file_path =
-    std::string{TEST_FILES_DIRECTORY} + "/pose_broadcaster_params.yaml";
+  const std::vector<std::string> test_file_path = {
+    std::string{TEST_FILES_DIRECTORY} + "/pose_broadcaster_params.yaml"};
   cm.set_parameter({"test_pose_broadcaster.params_file", test_file_path});
 
   cm.set_parameter({"test_pose_broadcaster.type", "pose_broadcaster/PoseBroadcaster"});

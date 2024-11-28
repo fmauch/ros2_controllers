@@ -27,8 +27,8 @@ TEST(TestLoadGripperActionControllers, load_controller)
 
   controller_manager::ControllerManager cm(
     executor, ros2_control_test_assets::minimal_robot_urdf, true, "test_controller_manager");
-  const std::string test_file_path =
-    std::string(TEST_FILES_DIRECTORY) + "/gripper_action_controller_params.yaml";
+  const std::vector<std::string> test_file_path = {
+    std::string(TEST_FILES_DIRECTORY) + "/gripper_action_controller_params.yaml"};
 
   cm.set_parameter({"test_gripper_action_position_controller.params_file", test_file_path});
   cm.set_parameter(
